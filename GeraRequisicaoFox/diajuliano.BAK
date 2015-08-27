@@ -1,0 +1,13 @@
+parameters mano, mdia
+
+SET DATE BRITISH
+
+local mdata as date
+LOCAL dataFormatada AS CHAR
+
+mdata = ctod('01/01/'+mano)
+dataFormatada = TTOC(mdata+(mdia-1))
+dataFormatada = STRTRAN(dataFormatada,"/","")
+dataFormatada = SUBSTR(dataFormatada,1,8)
+
+RETURN dataFormatada

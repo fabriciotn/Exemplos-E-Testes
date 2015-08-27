@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.logistica.ciandt.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.logistica.ciandt.com.br" xmlns:intf="http://services.logistica.ciandt.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.logistica.ciandt.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="buscaMelhorCaminho">
+    <complexType>
+     <sequence>
+      <element name="origem" type="xsd:string"/>
+      <element name="destino" type="xsd:string"/>
+      <element name="autonomiaCaminhao" type="xsd:int"/>
+      <element name="valorLitroGasolina" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaMelhorCaminhoResponse">
+    <complexType>
+     <sequence>
+      <element name="buscaMelhorCaminhoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereMapa">
+    <complexType>
+     <sequence>
+      <element name="nomeDoMapa" type="xsd:string"/>
+      <element name="origem" type="xsd:string"/>
+      <element name="destino" type="xsd:string"/>
+      <element name="distancia" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereMapaResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insereMapaResponse">
+
+      <wsdl:part element="impl:insereMapaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaMelhorCaminhoResponse">
+
+      <wsdl:part element="impl:buscaMelhorCaminhoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereMapaRequest">
+
+      <wsdl:part element="impl:insereMapa" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaMelhorCaminhoRequest">
+
+      <wsdl:part element="impl:buscaMelhorCaminho" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MapaService">
+
+      <wsdl:operation name="buscaMelhorCaminho">
+
+         <wsdl:input message="impl:buscaMelhorCaminhoRequest" name="buscaMelhorCaminhoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaMelhorCaminhoResponse" name="buscaMelhorCaminhoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereMapa">
+
+         <wsdl:input message="impl:insereMapaRequest" name="insereMapaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insereMapaResponse" name="insereMapaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MapaServiceSoapBinding" type="impl:MapaService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="buscaMelhorCaminho">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaMelhorCaminhoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaMelhorCaminhoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereMapa">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insereMapaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insereMapaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MapaServiceService">
+
+      <wsdl:port binding="impl:MapaServiceSoapBinding" name="MapaService">
+
+         <wsdlsoap:address location="http://localhost:8080/Logistica/services/MapaService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

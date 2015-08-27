@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MapaServiceService WSDL service -->
+
+  <service name="MapaService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.logistica.ciandt.com.br"/>
+      <parameter name="wsdlServiceElement" value="MapaServiceService"/>
+      <parameter name="schemaQualified" value="http://services.logistica.ciandt.com.br"/>
+      <parameter name="wsdlServicePort" value="MapaService"/>
+      <parameter name="className" value="br.com.ciandt.logistica.services.MapaService"/>
+      <parameter name="wsdlPortType" value="MapaService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.logistica.ciandt.com.br" xmlns:retNS="http://services.logistica.ciandt.com.br" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="buscaMelhorCaminho" qname="operNS:buscaMelhorCaminho" returnQName="retNS:buscaMelhorCaminhoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:origem" type="tns:string"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:destino" type="tns:string"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:autonomiaCaminhao" type="tns:int"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:valorLitroGasolina" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://services.logistica.ciandt.com.br" name="insereMapa" qname="operNS:insereMapa" soapAction="">
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nomeDoMapa" type="tns:string"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:origem" type="tns:string"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:destino" type="tns:string"/>
+        <parameter xmlns:pns="http://services.logistica.ciandt.com.br" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:distancia" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="buscaMelhorCaminho insereMapa"/>
+
+  </service>
+</deployment>

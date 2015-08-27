@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="Lib/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="Lib/asm-3.3.1.jar"/>
+	<classpathentry kind="lib" path="Lib/asm-commons-3.3.1.jar"/>
+	<classpathentry kind="lib" path="Lib/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="Lib/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="Lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="Lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-core-3.6.10.Final.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-entitymanager-3.6.10.Final.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-jpamodelgen-1.1.1.Final.jar"/>
+	<classpathentry kind="lib" path="Lib/hibernate-tools-3.6.0.CR1.jar"/>
+	<classpathentry kind="lib" path="Lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="Lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="Lib/jtidy-r8-20060801.jar"/>
+	<classpathentry kind="lib" path="Lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="Lib/oscache-2.1.jar"/>
+	<classpathentry kind="lib" path="Lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Lib/slf4j-simple-1.6.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
